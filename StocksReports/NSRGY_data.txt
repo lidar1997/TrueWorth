@@ -1,0 +1,16 @@
+Stock: NSRGY
+Date: 
+Stock's market cap to intrinsic val ratio by Buffet: 0.31309605335542534
+Stock's market cap to intrinsic val ratio by Graham: 3.2592646823684035Average growth rate: inf
+Annual Operating Income: [15215000000.0, 14363000000.0, 13848000000.0, 13883000000.0]
+Annual Depreciation & Amortization: [4017000000.0, 4012000000.0, 3168000000.0, 3296000000.0]
+Annual Capital Expenditure: [-3960000000.0, -4016000000.0, -4056000000.0, -4016000000.0]
+Annual changes in working capital: [-4979000000.0, 80000000.0, 514000000.0]
+Total debt: ['', '', '']
+Free cashflow: 
+
+Calculated annual owner earnings: [10293000000.0, 14439000000.0, 13474000000.0]
+Market capacity: 298573741243
+Intrinsic val ratio by Buffet: 953617070682.3325
+Intrinsic value by Graham: 91607700000.0
+

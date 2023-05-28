@@ -1,0 +1,84 @@
+Stock: KEN
+An exception happened: list index out of range
+last report was 7 years ago. Growth rate will be calculated based on 7 years
+
+Stock: SPOT
+An exception happened: could not convert string to float: ''
+last report was 5 years ago. Growth rate will be calculated based on 5 years
+
+Stock: ABNB
+An exception happened: 'financials'
+last report was -1 years ago. Growth rate will be calculated based on -1 years
+
+Stock: SHLS
+An exception happened: 'financials'
+last report was -1 years ago. Growth rate will be calculated based on -1 years
+
+An exception happened: 'annualReports'
+
+An exception happened: 'annualReports'
+
+An exception happened: 'annualReports'
+
+An exception happened: HTTP Error 403: Forbidden
+
+An exception happened: name 'KEY' is not defined
+
+Stock: SPOT
+An exception happened: list index out of range
+last report was 6 years ago. Growth rate will be calculated based on 6 years
+
+Stock: SPOT
+An exception happened: list index out of range
+last report was 6 years ago. Growth rate will be calculated based on 6 years
+
+Stock: SPOT
+An exception happened: list index out of range
+last report was 6 years ago. Growth rate will be calculated based on 6 years
+
+An exception happened: 0
+
+An exception happened: HTTPSConnectionPool(host='financialmodelingprep.com', port=443): Max retries exceeded with url: /api/v3/financials/income-statement/NSRGY?apikey=0ef11b1f00199ee665a2504f19b26fdb (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001A9BC6F0D90>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+Stock: NSRGY
+An exception happened: list index out of range
+last report was 2 years ago. Growth rate will be calculated based on 2 years
+
+An exception happened: 'dcf'
+
+Stock: NSRGY
+An exception happened: list index out of range
+last report was 2 years ago. Growth rate will be calculated based on 2 years
+
+Stock: NSRGY
+An exception happened: list index out of range
+last report was 2 years ago. Growth rate will be calculated based on 2 years
+
+An exception happened: local variable 'date' referenced before assignment
+
+Stock: NSRGY
+An exception happened: list index out of range
+last report was 2 years ago. Growth rate will be calculated based on 2 years
+
+Stock: BAC
+An exception happened: list index out of range
+last report was 28 years ago. Growth rate will be calculated based on 28 years
+
+Stock: BAC
+An exception happened: list index out of range
+last report was 28 years ago. Growth rate will be calculated based on 28 years
+
+Stock: SPOT
+An exception happened: list index out of range
+last report was 6 years ago. Growth rate will be calculated based on 6 years
+
+Stock: SPOT
+An exception happened: list index out of range
+last report was 6 years ago. Growth rate will be calculated based on 6 years
+
+An exception happened: list index out of range
+
+Stock: SPOT
+An exception happened: list index out of range
+last report was 6 years ago. Growth rate will be calculated based on 6 years
+
