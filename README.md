@@ -5,7 +5,7 @@ The tool employs Warren Buffett's method to determine a stock's intrinsic value,
 
 ============ HOW TO USE ============
 
-1. get your API key from https://site.financialmodelingprep.com/developer. Note that if you choose the free edition you can use it only on US stocks, or use is_foreign_stock=true and insert your own data in it
+1. get your API key from https://site.financialmodelingprep.com/developer. Note that if you choose the free edition you can use it only on US stocks, or use is_foreign_stock=true and insert your own data in financial_handler.get_manual_financial_data()
 2. put your key in a new file called 'key_holder.txt' - make sure its in a single line and with no other characters!
 3. run from your favorite IDE or terminal using this syntax: <stock_ticker> <num_of_years> <is_foreign_stock> where 
     ticker: str - the symbol of the desired stock
