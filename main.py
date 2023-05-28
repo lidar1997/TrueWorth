@@ -7,16 +7,25 @@ import Buffet_methods
 import financial_handler as fh
 
 
-KEY = ""  # todo: your key goes here
 BUFFET_DISCOUNT_RATE = 0.1
 
 
-def main(ticker, num_of_years, use_manual_data):
+def get_key():
+    try:
+        with open("key_holder.txt", 'r') as key_file:
+            key = key_file.readlines()[0].strip()
+            return key
+    except IOError as ioex:
+        raise IOError("Error: can't read the key from key_holder.txt. make sure it exists!")
+
+
+def main(ticker, num_of_years, use_manual_data, api_key):
     """
     main function of the program
     :param ticker: str - the symbol of the desired stock
     :param num_of_years: int - the number of years to get the financial data from
     :param use_manual_data: marker to use the manual inserted data
+    :param api_key: key for the API use
     """
     if use_manual_data:
         owner_earnings_list, growth_rate, market_cap, financial_message = fh.get_manual_financial_data()
@@ -25,8 +34,8 @@ def main(ticker, num_of_years, use_manual_data):
 
     else:
         owner_earnings_list, growth_rate, market_cap, financial_message = \
-            fh.get_financial_data(ticker, KEY, num_of_years)
-        date, share_price, dcf_per_share = fh.get_price_and_dcf(ticker, KEY)
+            fh.get_financial_data(ticker, api_key, num_of_years)
+        date, share_price, dcf_per_share = fh.get_price_and_dcf(ticker, api_key)
         api_response = f"\nStock's price to APIs discounted cash flow: {share_price / dcf_per_share}\n\n"
 
     current_owner_earning = owner_earnings_list[0]
@@ -69,7 +78,8 @@ if __name__ == "__main__":
         t = str.upper(sys.argv[1])
         number_of_years = int(sys.argv[2])
         is_foreign_stock = sys.argv[3].lower() in ("1", "true", "yes", "y")
-        main(t, number_of_years, is_foreign_stock)
+        key = get_key()
+        main(t, number_of_years, is_foreign_stock, key)
 
     except (TypeError, IndexError) as bad_args:
         print("Error: program's correct usage is: <stock_ticker> <num_of_years> <is_foreign_stock>")
