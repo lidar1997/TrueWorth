@@ -1,0 +1,15 @@
+# Ignore compiled Python files
+*.pyc
+__pycache__/
+
+# Ignore environment-specific settings
+.env
+
+# Ignore IDE files
+.idea/
+.vscode/
+
+# Ignore log file and stocks data history
+logs.txt
+/IsraeliStocks
+/StocksReports
