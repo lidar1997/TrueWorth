@@ -7,8 +7,7 @@ import Buffet_methods
 import financial_handler as fh
 
 
-KEY = "0ef11b1f00199ee665a2504f19b26fdb"
-# KEY = "d361b8d1b456597441e62d6c884eef78"
+KEY = ""  # todo: your key goes here
 BUFFET_DISCOUNT_RATE = 0.1
 
 
