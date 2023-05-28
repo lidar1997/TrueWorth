@@ -11,11 +11,14 @@ BUFFET_DISCOUNT_RATE = 0.1
 
 
 def get_key():
+    """
+    get the key from key_holder.txt file
+    """
     try:
         with open("key_holder.txt", 'r') as key_file:
             key = key_file.readlines()[0].strip()
             return key
-    except IOError as ioex:
+    except IOError:
         raise IOError("Error: can't read the key from key_holder.txt. make sure it exists!")
 
 
@@ -91,7 +94,7 @@ if __name__ == "__main__":
             with open("logs.txt", 'a') as r:
                 r.write("An exception happened: " + str(e))
                 r.write("\n\n")
-            raise  # for debugging
+
         except IOError as ioe:
             print("*** ERROR ***")
             print(str(ioe))
