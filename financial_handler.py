@@ -138,11 +138,14 @@ def get_manual_financial_data():
     :returns same as get_financial_data
     """
     owner_earnings_list = []
-    net_income = [6.64e9, 5.02e9, 2.56e9, 2.93e9, 2.19e9, 2.15e9, 2.05e9]
-    dep_am = [339000000, 283000000, 245000000, 238000000, 245000000, 223000000, 223000000]
-    capEx = [-391000000, -336000000, -288000000, -300000000, -259000000, -247000000, -245000000]
-    working_cap_changes = [-579e6, -1.21e9, 2.48e9, -767e6, 1.18e9, -191e6, 1.21e9]
-    market_cap = 32.248e9
+
+    # todo: fill those values with your company's data for manual use
+    net_income = []
+    dep_am = []
+    capEx = []
+    working_cap_changes = []
+    market_cap = 0
+    # end of todo
 
     for i in range(len(net_income)):
         owner_earnings_list.append(Buffet_methods.owner_earnings_per_share(net_income[i], dep_am[i],
