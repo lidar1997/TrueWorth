@@ -30,7 +30,7 @@ def calculate_growth_rate(owner_earnings_list):
     cur_avg = sum(owner_earnings_list[:YEARS_FOR_AVG]) / YEARS_FOR_AVG
     old_avg = sum(owner_earnings_list[-YEARS_FOR_AVG:]) / YEARS_FOR_AVG
     growth = cur_avg / old_avg
-    growth_period = len(owner_earnings_list) - 3
+    growth_period = len(owner_earnings_list) - YEARS_FOR_AVG
 
     return growth ** (1/growth_period) - 1
 
