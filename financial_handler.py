@@ -30,7 +30,7 @@ def calculate_growth_rate(owner_earnings_list):
     cur_avg = sum(owner_earnings_list[:YEARS_FOR_AVG]) / YEARS_FOR_AVG
     old_avg = sum(owner_earnings_list[-YEARS_FOR_AVG:]) / YEARS_FOR_AVG
     growth = cur_avg / old_avg
-    growth_period = len(owner_earnings_list) - YEARS_FOR_AVG
+    growth_period = len(owner_earnings_list) - YEARS_FOR_AVG + 1
 
     return growth ** (1/growth_period) - 1
 
@@ -118,20 +118,6 @@ def get_financial_data(ticker, api_key, num_of_years):
     return owner_earnings_list, growth_rate, market_cap, financial_message
 
 
-def get_price_and_dcf(ticker, key):
-    """
-    gets the dfc result for the stock from the API
-    :param ticker: stock's ticker for the API
-    :param key: API key
-    :return: today's date, current stock price and dcf per share
-    """
-    dcf_data = get_json_from_url(DCF_STATEMENT_URL + f"{ticker}?apikey={key}")[0]
-    date = dcf_data["date"]
-    price = float(dcf_data["Stock Price"])
-    dcf_per_share = float(dcf_data["dcf"])
-    return date, price, dcf_per_share
-
-
 def get_manual_financial_data():
     """
     for foreign (non-US country) companies, must set data manually.
@@ -145,7 +131,7 @@ def get_manual_financial_data():
     capEx = []
     working_cap_changes = []
     market_cap = 0
-    # end of todo
+    # end of to do
 
     for i in range(len(net_income)):
         owner_earnings_list.append(Buffet_methods.owner_earnings_per_share(net_income[i], dep_am[i],

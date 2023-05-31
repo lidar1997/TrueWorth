@@ -2,6 +2,7 @@ import os
 import sys
 import tkinter as tk
 from tkinter import messagebox
+from datetime import date
 
 import Buffet_methods
 import financial_handler as fh
@@ -32,14 +33,12 @@ def main(ticker, num_of_years, use_manual_data, api_key):
     """
     if use_manual_data:
         owner_earnings_list, growth_rate, market_cap, financial_message = fh.get_manual_financial_data()
-        date = "28/5/2023"  # todo: CHANGE daily!
-        api_response = "\n\n"
 
     else:
         owner_earnings_list, growth_rate, market_cap, financial_message = \
             fh.get_financial_data(ticker, api_key, num_of_years)
-        date, share_price, dcf_per_share = fh.get_price_and_dcf(ticker, api_key)
-        api_response = f"\nStock's price to APIs discounted cash flow: {share_price / dcf_per_share}\n\n"
+
+    today = date.today()
 
     current_owner_earning = owner_earnings_list[0]
 
@@ -61,8 +60,8 @@ def main(ticker, num_of_years, use_manual_data, api_key):
     intrinsic_val = Buffet_methods.intrinsic_value(current_owner_earning, growth_rate, lower_growth_rate,
                                                    BUFFET_DISCOUNT_RATE)
 
-    response = f"Stock: {ticker}\nDate: {date}\nStock's market cap to intrinsic val ratio by Buffet: " \
-               f"{fh.market_cap_to_intrinsic_value(market_cap, intrinsic_val)}" + api_response
+    response = f"Stock: {ticker}\nDate: {today}\nStock's market cap to intrinsic val ratio by Buffet: " \
+               f"{fh.market_cap_to_intrinsic_value(market_cap, intrinsic_val)}\n\n"
 
     root = tk.Tk()
     root.withdraw()
