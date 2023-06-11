@@ -3,6 +3,10 @@ TrueWorth is a tool designed to help understand the true worth of a publicly tra
 
 The tool employs Warren Buffett's method to determine a stock's intrinsic value, using the discounted cash flow method. If the intrinsic value is below the company's market cap, it is considered 'undervalued'.
 
+**** UPDATE ****
+
+right now the manual financial data is off, only US stocks are valid
+
 ============ HOW TO USE ============
 
 1. get your API key from https://site.financialmodelingprep.com/developer. Note that if you choose the free edition you can use it only on US stocks, or use is_foreign_stock=true and insert your own data in financial_handler.get_manual_financial_data()
