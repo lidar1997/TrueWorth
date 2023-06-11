@@ -12,11 +12,11 @@ The tool employs Warren Buffett's method to determine a stock's intrinsic value,
     
 4. How to run the algo for foreign stocks:
     4.1 Create a file under <project_name>\foreignStocks\<stock_ticker>.txt
-    4.2 Fill the information in the file in the following format: - line 1 is the annual operating income, with ',' as delimeter only - no spaces!
-                                                                  - line 2 is the same but for the annual depreciation & amortization
-                                                                  - line 3 is the same but for the annual capEx
-                                                                  - line 4 is the same but for the annual working cap change
-                                                                  - line 5 is the market cap
+    4.2 Fill the information in the file in the following format: line 1 is the annual operating income, with ',' as the only delimeter between years - no spaces!
+                                                                  line 2 is the same but for the annual depreciation & amortization
+                                                                  line 3 is the same but for the annual capEx
+                                                                  line 4 is the same but for the annual working cap change
+                                                                  line 5 is the market cap
     4.3 Run the app following section 3. using is_foreign_stock=true (the checkbox in the GUI)
 
 
