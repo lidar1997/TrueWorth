@@ -32,8 +32,7 @@ class Model:
         :param use_manual_data: marker to use the manual inserted data
         """
         if use_manual_data:
-            # todo: get the values from txt file
-            owner_earnings_list, growth_rate, market_cap, financial_message = fh.get_manual_financial_data()
+            owner_earnings_list, growth_rate, market_cap, financial_message = fh.get_manual_financial_data(ticker)
 
         else:
             owner_earnings_list, growth_rate, market_cap, financial_message = \

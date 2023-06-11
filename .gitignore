@@ -11,6 +11,6 @@ __pycache__/
 
 # Ignore log file and stocks data history
 logs.txt
-/IsraeliStocks
+/ForeignStocks
 /StocksReports
 key_holder.txt
