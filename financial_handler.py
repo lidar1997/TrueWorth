@@ -123,12 +123,12 @@ def analyze_manual_data_file(ticker):
     with open(f"ForeignStocks/{ticker}.txt", 'r') as data_file:
         lines = data_file.readlines()
 
-    net_income = [float(val) for val in lines[0].split(',')]
+    operating_income = [float(val) for val in lines[0].split(',')]
     dep_am = [float(val) for val in lines[1].split(',')]
     capEx = [float(val) for val in lines[2].split(',')]
     working_cap_changes = [float(val) for val in lines[3].split(',')]
     market_cap = float(lines[4])
-    return net_income, dep_am, capEx, working_cap_changes, market_cap
+    return operating_income, dep_am, capEx, working_cap_changes, market_cap
 
 
 def get_manual_financial_data(ticker):
@@ -138,16 +138,17 @@ def get_manual_financial_data(ticker):
     """
     owner_earnings_list = []
 
-    net_income_list, dep_am_list, capEx_list, working_cap_changes_list, market_cap = analyze_manual_data_file(ticker)
+    operating_income_list, dep_am_list, capEx_list, working_cap_changes_list, market_cap = \
+        analyze_manual_data_file(ticker)
 
-    for i in range(len(net_income_list)):
-        owner_earnings_list.append(Buffet_methods.owner_earnings_per_share(net_income_list[i], dep_am_list[i],
+    for i in range(len(operating_income_list)):
+        owner_earnings_list.append(Buffet_methods.owner_earnings_per_share(operating_income_list[i], dep_am_list[i],
                                                                            capEx_list[i], working_cap_changes_list[i]))
 
     growth_rate = calculate_growth_rate(owner_earnings_list)
 
     financial_message = (f"Average growth rate: {growth_rate}"
-                         f"\nAnnual net income: {net_income_list}"
+                         f"\nAnnual net income: {operating_income_list}"
                          f"\nAnnual Depreciation & Amortization: {dep_am_list}"
                          f"\nAnnual Capital Expenditure: {capEx_list}"
                          f"\nAnnual changes in working capital: {working_cap_changes_list}"
