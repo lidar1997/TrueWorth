@@ -20,7 +20,7 @@ def get_json_from_url(url):
 
 def calculate_growth_rate(owner_earnings_list):
     """
-    Calculates the growth rate as a 10Y avg in YEARS_FOR_AVG-periods
+    Calculates the growth rate as an avg in YEARS_FOR_AVG-periods
     :param owner_earnings_list: list of past owner earnings (as defined by Warren Buffet)
     :return: the growth rate
     """
@@ -64,7 +64,6 @@ def get_financial_data(ticker, api_key, num_of_years):
              market_cap - company's market capacity
              financial_message - message for the data logger
     """
-    # todo: get the values from txt file
     operating_income_list = []
     d_and_a_list = []
     capEx_list = []

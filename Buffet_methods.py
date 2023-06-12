@@ -1,8 +1,7 @@
 
 def calculate_owner_earnings(operating_income, depreciation_amortization, capital_exp, working_cap_changes):
     """
-    Calculates the owner earnings per share (OEPS) of a company using online financial data according to
-    Warren Buffet's method.
+    Calculates the owner earnings of a company according to Warren Buffet's method.
 
     Parameters:
     :param operating_income - company's operating income for that year
