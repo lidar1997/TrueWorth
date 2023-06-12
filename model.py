@@ -59,7 +59,7 @@ class Model:
         intrinsic_val = Buffet_methods.intrinsic_value(current_owner_earning, growth_rate, lower_growth_rate,
                                                        BUFFET_DISCOUNT_RATE)
 
-        response = f"Stock: {ticker}\nDate: {today}\nStock's market cap to intrinsic val ratio by Buffet: " \
+        response = f"Stock: {ticker}\nDate: {today}\nStock's market cap to intrinsic val ratio by Buffet:\n" \
                    f"{fh.market_cap_to_intrinsic_value(market_cap, intrinsic_val)}\n\n"
 
         # write results

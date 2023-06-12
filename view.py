@@ -21,13 +21,13 @@ class View:
         self.response_label = tk.Label(self.root, text=BASIC_RES)
 
         # Stock Ticker
-        self.stock_ticker_label = tk.Label(self.root, text="Stock Ticker:")
+        self.stock_ticker_label = tk.Label(self.root, text="Stock Ticker:", justify="center")
         self.stock_ticker_label.pack()
         self.stock_ticker_entry = tk.Entry(self.root)
         self.stock_ticker_entry.pack()
 
         # Number of Years
-        self.num_of_years_label = tk.Label(self.root, text="Number of Years:")
+        self.num_of_years_label = tk.Label(self.root, text="Number of Years:", justify="center")
         self.num_of_years_label.pack()
         self.num_of_years_entry = tk.Entry(self.root)
         self.num_of_years_entry.pack()
@@ -35,7 +35,7 @@ class View:
         # Is Foreign Stock Checkbox
         self.is_foreign_stock_var = tk.BooleanVar()
         self.is_foreign_stock_checkbox = tk.Checkbutton(self.root, text="Is Foreign Stock",
-                                                        variable=self.is_foreign_stock_var)
+                                                        variable=self.is_foreign_stock_var, justify="center")
         self.is_foreign_stock_checkbox.pack()
 
         # self.is_foreign_stock_var.trace("w", lambda *args: self.show_hide_foreign_stock_inputs())
@@ -43,7 +43,8 @@ class View:
         self.stock_ticker_entry.bind("<KeyRelease>", lambda event: self.enable_disable_submit_button())
         self.num_of_years_entry.bind("<KeyRelease>", lambda event: self.enable_disable_submit_button())
 
-        self.submit_button = tk.Button(self.root, text="Submit", command=self.submit, state=tk.DISABLED)
+        self.submit_button = tk.Button(self.root, text="Submit", command=self.submit, state=tk.DISABLED,
+                                       justify="center")
         self.submit_button.pack()
 
         self.root.mainloop()
@@ -54,7 +55,7 @@ class View:
         """
         # Set the window size
         window_width = 400  # Specify the desired width of the window
-        window_height = 300  # Specify the desired height of the window
+        window_height = 250  # Specify the desired height of the window
         screen_width = self.root.winfo_screenwidth()
         screen_height = self.root.winfo_screenheight()
         x_coordinate = int((screen_width / 2) - (window_width / 2))
@@ -77,7 +78,7 @@ class View:
         """
         The function to execute when 'submit' button is pressed
         """
-        self.response_label.config(text=BASIC_RES)
+        self.response_label.config(text=BASIC_RES, justify="center")
         stock_ticker_val = str.upper(self.stock_ticker_entry.get())
         num_of_years_val = int(self.num_of_years_entry.get())
         is_foreign_stock_val = self.is_foreign_stock_var.get()
