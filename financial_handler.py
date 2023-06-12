@@ -92,7 +92,7 @@ def get_financial_data(ticker, api_key, num_of_years):
                 float(calculate_working_capital(balance_data["financials"][i], balance_data["financials"][i+1])))
             total_debt_list.append(balance_data["financials"][i]["Total debt"])
 
-            owner_earnings_list.append(Buffet_methods.owner_earnings_per_share(operating_income_list[i],
+            owner_earnings_list.append(Buffet_methods.calculate_owner_earnings(operating_income_list[i],
                                                                                d_and_a_list[i],
                                                                                capEx_list[i],
                                                                                working_cap_list[i]))
@@ -142,7 +142,7 @@ def get_manual_financial_data(ticker):
         analyze_manual_data_file(ticker)
 
     for i in range(len(operating_income_list)):
-        owner_earnings_list.append(Buffet_methods.owner_earnings_per_share(operating_income_list[i], dep_am_list[i],
+        owner_earnings_list.append(Buffet_methods.calculate_owner_earnings(operating_income_list[i], dep_am_list[i],
                                                                            capEx_list[i], working_cap_changes_list[i]))
 
     growth_rate = calculate_growth_rate(owner_earnings_list)

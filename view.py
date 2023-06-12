@@ -1,3 +1,4 @@
+import logging
 import tkinter as tk
 
 BASIC_RES = "Algo's response:"
@@ -12,42 +13,49 @@ class View:
         """
         Initialize the root window
         """
-        self.run_function = main_function
+        logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', filename="logs.txt")
+        self.logger = logging.getLogger(__name__)
 
-        self.root = tk.Tk()
-        self.root.title("True Worth")
-        self.set_size()
+        try:
+            self.run_function = main_function
 
-        self.response_label = tk.Label(self.root, text=BASIC_RES)
+            self.root = tk.Tk()
+            self.root.title("True Worth")
+            self.set_size()
 
-        # Stock Ticker
-        self.stock_ticker_label = tk.Label(self.root, text="Stock Ticker:", justify="center")
-        self.stock_ticker_label.pack()
-        self.stock_ticker_entry = tk.Entry(self.root)
-        self.stock_ticker_entry.pack()
+            self.response_label = tk.Label(self.root, text=BASIC_RES)
 
-        # Number of Years
-        self.num_of_years_label = tk.Label(self.root, text="Number of Years:", justify="center")
-        self.num_of_years_label.pack()
-        self.num_of_years_entry = tk.Entry(self.root)
-        self.num_of_years_entry.pack()
+            # Stock Ticker
+            self.stock_ticker_label = tk.Label(self.root, text="Stock Ticker:", justify="center")
+            self.stock_ticker_label.pack()
+            self.stock_ticker_entry = tk.Entry(self.root)
+            self.stock_ticker_entry.pack()
 
-        # Is Foreign Stock Checkbox
-        self.is_foreign_stock_var = tk.BooleanVar()
-        self.is_foreign_stock_checkbox = tk.Checkbutton(self.root, text="Is Foreign Stock",
-                                                        variable=self.is_foreign_stock_var, justify="center")
-        self.is_foreign_stock_checkbox.pack()
+            # Number of Years
+            self.num_of_years_label = tk.Label(self.root, text="Number of Years:", justify="center")
+            self.num_of_years_label.pack()
+            self.num_of_years_entry = tk.Entry(self.root)
+            self.num_of_years_entry.pack()
 
-        # self.is_foreign_stock_var.trace("w", lambda *args: self.show_hide_foreign_stock_inputs())
-        # Call the enable_disable_button function whenever the entry values change
-        self.stock_ticker_entry.bind("<KeyRelease>", lambda event: self.enable_disable_submit_button())
-        self.num_of_years_entry.bind("<KeyRelease>", lambda event: self.enable_disable_submit_button())
+            # Is Foreign Stock Checkbox
+            self.is_foreign_stock_var = tk.BooleanVar()
+            self.is_foreign_stock_checkbox = tk.Checkbutton(self.root, text="Is Foreign Stock",
+                                                            variable=self.is_foreign_stock_var, justify="center")
+            self.is_foreign_stock_checkbox.pack()
 
-        self.submit_button = tk.Button(self.root, text="Submit", command=self.submit, state=tk.DISABLED,
-                                       justify="center")
-        self.submit_button.pack()
+            # self.is_foreign_stock_var.trace("w", lambda *args: self.show_hide_foreign_stock_inputs())
+            # Call the enable_disable_button function whenever the entry values change
+            self.stock_ticker_entry.bind("<KeyRelease>", lambda event: self.enable_disable_submit_button())
+            self.num_of_years_entry.bind("<KeyRelease>", lambda event: self.enable_disable_submit_button())
 
-        self.root.mainloop()
+            self.submit_button = tk.Button(self.root, text="Submit", command=self.submit, state=tk.DISABLED,
+                                           justify="center")
+            self.submit_button.pack()
+
+            self.root.mainloop()
+
+        except Exception as e:
+            self.logger.error(e)
 
     def set_size(self):
         """

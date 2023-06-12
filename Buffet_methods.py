@@ -1,11 +1,11 @@
 
-def owner_earnings_per_share(net_income, depreciation_amortization, capital_exp, working_cap_changes):
+def calculate_owner_earnings(operating_income, depreciation_amortization, capital_exp, working_cap_changes):
     """
     Calculates the owner earnings per share (OEPS) of a company using online financial data according to
     Warren Buffet's method.
 
     Parameters:
-    :param net_income - company's net income for that year
+    :param operating_income - company's operating income for that year
     :param depreciation_amortization depreciation and amortization
     :param capital_exp - company's capital expenditure
     :param working_cap_changes - changes in working cap
@@ -13,7 +13,7 @@ def owner_earnings_per_share(net_income, depreciation_amortization, capital_exp,
     :return The owner earnings per share of the company
     """
 
-    return net_income + depreciation_amortization + working_cap_changes + capital_exp
+    return operating_income + depreciation_amortization + working_cap_changes + capital_exp
 
 
 def intrinsic_value(owner_earnings, growth_rate, lower_future_growth_rate, discount_rate):
